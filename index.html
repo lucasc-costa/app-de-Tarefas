@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de tarefas</title>
+    <style>
+        .feito{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de tarefas</h1>
+    <input type="text" id="nome">
+    <input type="submit" value="adicionar" id="botao">
+    <div id="pai">
+        
+    </div>
+
+
+    <script>
+        var nome = document.getElementById("nome")
+        var botao = document.getElementById("botao")
+        var pai = document.getElementById("pai")
+
+        botao.addEventListener("click",function criaNota(){
+            var add = document.createElement('div')
+            add.className="tarefa"
+            add.style="background-color: lightblue;";
+            pai.appendChild(add)
+            var tarefa = document.getElementsByClassName("tarefa")
+            var quant = tarefa.length - 1
+
+            
+
+            add = document.createElement('input')
+            add.type="checkbox"
+            add.className="done"
+            tarefa[quant].appendChild(add)
+            
+
+            add = document.createElement('input')
+            add.type="text"
+            add.className="lista"
+            add.value=nome.value
+            tarefa[quant].appendChild(add)
+
+            add = document.createElement('input')
+            add.type="button"
+            add.value="delete" 
+            add.className="delete"
+            tarefa[quant].appendChild(add)
+
+            var deletar = document.getElementsByClassName("delete")       
+            deletar[quant].addEventListener('click',function(){
+                pai.removeChild(this.parentNode)   
+            })
+
+            var done = document.getElementsByClassName("done")       
+            done[quant].addEventListener('change',function(){
+                var lista = document.getElementsByClassName("lista")
+                if (done[quant].checked) {
+                    lista[quant].classList.add("feito")
+                }else{    
+                    lista[quant].classList.remove("feito")
+                }
+            })
+
+            nome.value=""
+            
+        })
+       
+        
+    </script>
+</body>
+</html>
