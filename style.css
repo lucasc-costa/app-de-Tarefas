@@ -1,0 +1,63 @@
+html{
+    font-size: 65.5%;
+    --cor-letra:gray;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: lightyellow;
+    color: var(--cor-letra);
+}
+
+h1{
+    font-size: 4.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#nome{
+    width: 25.0rem;
+    height: 3rem;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 1.5rem;
+    color: var(--cor-letra);
+}
+
+#botao, .delete{
+    width: 7rem;
+    height: 3.5rem;
+    border: 2px solid lightgreen;
+    border-radius: 5px;
+    color: var(--cor-letra);
+    background-color: lightgreen;
+    margin: 5px;
+}
+
+.tarefa{
+    margin: 25px;
+    background-color: rgba(0,0,0,0);
+}
+
+.lista{
+    width: 20rem;
+    height: 2.5rem;
+    font-size: 1.4rem;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-letra);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.lista:hover{
+    background-color: whitesmoke;
+    border: 2px solid lightgray;
+}
+
+
+
+.feito{
+    text-decoration: line-through;
+}
